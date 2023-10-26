@@ -82,14 +82,27 @@ class MainScreen extends StatelessWidget {
             FadeInUp(
               duration: duration,
               delay: const Duration(milliseconds: 600),
-              child: SButton(
-                size: size,
-                borderColor: Colors.grey,
-                color: Colors.white,
-                img: 'assets/images/gmail.png',
-                text: "Continue with Email",
-                textStyle: null,
-              ),
+              child: Container(
+                width: 500,
+                height: 50,
+                child: ElevatedButton.icon(
+                    onPressed: (){},
+                    icon: Icon( // <-- Icon
+                      Icons.email_outlined,
+                      color: Colors.grey,
+                      size: 24.0,
+                    ),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,  ),label: Text("Continue with Email",style: TextStyle(color: Colors.black),)),
+              )
+              // SButton(
+              //   size: size,
+              //   borderColor: Colors.grey,
+              //   color: Colors.white,
+              //   img: 'assets/images/gmail.png',
+              //   text: "Continue with Email",
+              //   textStyle: null,
+              // ),
             ),
 
             ///
@@ -99,15 +112,28 @@ class MainScreen extends StatelessWidget {
             FadeInUp(
               duration: duration,
               delay: const Duration(milliseconds: 200),
-              child: SButton(
-                size: size,
-                borderColor: Colors.grey,
-                color:  Colors.white,
-                img: 'assets/images/phone.png',
-                text: "Continue with Phone",
-                textStyle: null,
-
-              ),
+              child:Container(
+                 width: 500,
+                 height: 50,
+                child: ElevatedButton.icon(
+                    onPressed: (){},
+                    icon: ImageIcon(
+                      AssetImage("assets/images/phone.png"),
+                      color: Colors.grey,
+                      size: 24,
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,  ),label: Text("Continue with Phone",style: TextStyle(color: Colors.black),)),
+              )
+              // SButton(
+              //   size: size,
+              //   borderColor: Colors.grey,
+              //   color:  Colors.white,
+              //   img: 'assets/images/phone.png',
+              //   text: "Continue with Phone",
+              //   textStyle: null,
+              //
+              // ),
             ),
 
             ///
