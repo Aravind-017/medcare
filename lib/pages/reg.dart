@@ -37,6 +37,11 @@ class _SignupState extends State<Signup> {
     'O -ve',
   ];
 
+  var gender =[
+    'male',
+    'female'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -185,17 +190,6 @@ class _SignupState extends State<Signup> {
               child:Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextFormField(
-                    decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.all(16),
-                      hintText: 'Enter Your Full Name.',
-                      hintStyle: const TextStyle(fontSize: 14),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 30),
                   DropdownButtonFormField2<String>(
                     isExpanded: true,
                     decoration: InputDecoration(
@@ -208,7 +202,7 @@ class _SignupState extends State<Signup> {
                       // Add more decoration..
                     ),
                     hint: const Text(
-                      'Select Your Gender',
+                      'Select Your Blood Group',
                       style: TextStyle(fontSize: 14),
                     ),
                     items: items
@@ -224,7 +218,76 @@ class _SignupState extends State<Signup> {
                         .toList(),
                     validator: (value) {
                       if (value == null) {
-                        return 'Please select gender.';
+                        return 'Please select Blood Group.';
+                      }
+                      return null;
+                    },
+                    onChanged: (value) {
+                      //Do something when selected item is changed.
+                    },
+                    onSaved: (value) {
+                      //selectedValue = value.toString();
+                    },
+                    buttonStyleData: const ButtonStyleData(
+                      padding: EdgeInsets.only(right: 8),
+                    ),
+                    iconStyleData: const IconStyleData(
+                      icon: Icon(
+                        Icons.arrow_drop_down,
+                        color: Colors.black45,
+                      ),
+                      iconSize: 24,
+                    ),
+                    dropdownStyleData: DropdownStyleData(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
+                    menuItemStyleData: const MenuItemStyleData(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10,),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child:Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+
+                  const SizedBox(height: 10),
+                  DropdownButtonFormField2<String>(
+                    isExpanded: true,
+                    decoration: InputDecoration(
+                      // Add Horizontal padding using menuItemStyleData.padding so it matches
+                      // the menu padding when button's width is not specified.
+                      contentPadding: const EdgeInsets.symmetric(vertical: 16),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      // Add more decoration..
+                    ),
+                    hint: const Text(
+                      'Select Your Gender',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    items: gender
+                        .map((item) => DropdownMenuItem<String>(
+                      value: item,
+                      child: Text(
+                        item,
+                        style: const TextStyle(
+                          fontSize: 14,
+                        ),
+                      ),
+                    ))
+                        .toList(),
+                    validator: (value) {
+                      if (value == null) {
+                        return 'Please select Gender.';
                       }
                       return null;
                     },
