@@ -179,6 +179,7 @@ class _SignupState extends State<DocSignup> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
+                  textCapitalization: TextCapitalization.characters,
                   controller: ulic,
                   validator: (username) {
                     if (username!.isEmpty ||
