@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:lottie/lottie.dart';
-import 'package:medcare/welcome/splash3.dart';
-import '../Modules/welcome_page.dart';
+
 
 class MainScreen extends StatelessWidget {
   final Duration duration = const Duration(milliseconds: 800);

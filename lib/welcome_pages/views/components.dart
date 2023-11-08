@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:medcare/welcome/splash%202.dart';
+import 'package:medcare/mainpage.dart';
 import '../clrs/clrs.dart';
 
 
@@ -26,8 +26,7 @@ class _GetStartBtnState extends State<GetStartBtn> {
       isLoading = true;
       Future.delayed(const Duration(seconds: 2)).then((value) {
         isLoading = false;
-        Navigator.pushReplacement(
-            context, CupertinoPageRoute(builder: (_) => const MainScreen()));
+       Navigator.push(context, MaterialPageRoute(builder: (context)=> MyApp()));
       });
     });
   }
